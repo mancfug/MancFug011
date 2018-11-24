@@ -12,6 +12,15 @@ module VoteActors =
             return! loop ()
         }
         loop ()
+    
+    let countingActor (mailbox: Actor<_>) =
+        let rec loop(oldValue) = actor {
+            let! message = mailbox.Receive ()
+            let newValue = oldValue + 1
+            printfn "Counted %d" newValue
+            return! loop(newValue)
+        }
+        loop(0)
 
 module Program =
     open System
@@ -19,14 +28,19 @@ module Program =
     open VoteActors
 
     [<EntryPoint>]
-    let main argv =
+    let main _ =
         let system = System.create "system" <| Configuration.load ()
         
-        let actorRef = spawn system "greetingActor" greetingActor
+        let greetingActorRef = spawn system "greetingActor" greetingActor
+        let countingActorRef = spawn system "countingActor" countingActor
 
-        actorRef <! "this!"
-        actorRef <! "that!"
-        actorRef <! "the other!"
+        greetingActorRef <! "this!"
+        greetingActorRef <! "that!"
+        greetingActorRef <! "the other!"
+
+        countingActorRef <! 1
+        countingActorRef <! " "
+        countingActorRef <! greetingActorRef
 
         Console.ReadKey() |> ignore
 
