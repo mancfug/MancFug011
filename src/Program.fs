@@ -2,31 +2,31 @@
     type Candidate = Candidate of string
     type Ballot = Candidate list
 
-module Messages =
-    type Hello = Hello of string
+module VoteActors =
+    open Akka.FSharp
+
+    let greetingActor (mailbox: Actor<_>) = 
+        let rec loop () = actor {
+            let! message = mailbox.Receive ()
+            printfn "Hello %s" message
+            return! loop ()
+        }
+        loop ()
 
 module Program =
     open System
     open Akka.FSharp
-
-    open Messages
+    open VoteActors
 
     [<EntryPoint>]
     let main argv =
         let system = System.create "system" <| Configuration.load ()
-
-        let myActor (mailbox: Actor<_>) = 
-            let rec loop () = actor {
-                let! message = mailbox.Receive ()
-                match message with
-                | Hello x -> printfn "Hello %s" x
-                return! loop ()
-            }
-            loop ()
         
-        let actorRef = spawn system "myActor" myActor
+        let actorRef = spawn system "greetingActor" greetingActor
 
-        actorRef <! Hello "World!"
+        actorRef <! "this!"
+        actorRef <! "that!"
+        actorRef <! "the other!"
 
         Console.ReadKey() |> ignore
 
