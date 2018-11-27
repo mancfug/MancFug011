@@ -3,9 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FsVote", "src\FsVote.fsproj", "{ACEBCB80-B739-4C78-9DAC-BB9F6465CF5E}"
-EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FsVoteTests", "test\FsVoteTests.fsproj", "{03DD357F-39CA-475E-981F-D872A6103FAE}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "AkkaDemo", "src\AkkaDemo.fsproj", "{ACEBCB80-B739-4C78-9DAC-BB9F6465CF5E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +13,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{ACEBCB80-B739-4C78-9DAC-BB9F6465CF5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -32,17 +27,11 @@ Global
 		{ACEBCB80-B739-4C78-9DAC-BB9F6465CF5E}.Release|x64.Build.0 = Release|Any CPU
 		{ACEBCB80-B739-4C78-9DAC-BB9F6465CF5E}.Release|x86.ActiveCfg = Release|Any CPU
 		{ACEBCB80-B739-4C78-9DAC-BB9F6465CF5E}.Release|x86.Build.0 = Release|Any CPU
-		{03DD357F-39CA-475E-981F-D872A6103FAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{03DD357F-39CA-475E-981F-D872A6103FAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{03DD357F-39CA-475E-981F-D872A6103FAE}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{03DD357F-39CA-475E-981F-D872A6103FAE}.Debug|x64.Build.0 = Debug|Any CPU
-		{03DD357F-39CA-475E-981F-D872A6103FAE}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{03DD357F-39CA-475E-981F-D872A6103FAE}.Debug|x86.Build.0 = Debug|Any CPU
-		{03DD357F-39CA-475E-981F-D872A6103FAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{03DD357F-39CA-475E-981F-D872A6103FAE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{03DD357F-39CA-475E-981F-D872A6103FAE}.Release|x64.ActiveCfg = Release|Any CPU
-		{03DD357F-39CA-475E-981F-D872A6103FAE}.Release|x64.Build.0 = Release|Any CPU
-		{03DD357F-39CA-475E-981F-D872A6103FAE}.Release|x86.ActiveCfg = Release|Any CPU
-		{03DD357F-39CA-475E-981F-D872A6103FAE}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A9C3B00A-5170-4575-8060-219108D7000A}
 	EndGlobalSection
 EndGlobal
